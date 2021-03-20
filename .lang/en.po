@@ -1,0 +1,63 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VelocidadNavegacion 3.12.2\n"
+"PO-Revision-Date: 2020-01-11 13:51 UTC\n"
+"Last-Translator: luisgulo <luisgulo@gmail.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .project:1
+msgid "Velocidad de Navegacion"
+msgstr "Navigation Speed"
+
+#: .project:2
+msgid "Medidor Grafico de Velocidad de Navegacion\nLocaliza el host mas cercano y realiza test de subida y bajada"
+msgstr "Graphic Navigation Speed ​​Meter  nLocate the nearest host and perform upload and download tests"
+
+#: FMain.class:9
+msgid "Test en Ejecucion"
+msgstr "Running Test"
+
+#: FMain.class:10
+msgid "Por favor espere hasta que se complete"
+msgstr "Please wait until it is completed"
+
+#: FMain.class:37
+msgid "Espere..."
+msgstr "Wait..."
+
+#: FMain.class:54
+msgid "Bajada: "
+msgstr "Download: "
+
+#: FMain.class:55
+msgid "Subida: "
+msgstr "Upload: "
+
+#: FMain.class:56
+msgid "Comprobar de nuevo"
+msgstr "Check again"
+
+#: FMain.class:64
+msgid "Medidor de Velocidad de Navegación"
+msgstr "Navigation Speed ​​Meter"
+
+#: FMain.class:72
+msgid "Velocidad RED"
+msgstr "NET Speed"
+
+#: FMain.form:14
+msgid "-"
+msgstr "-"
+
+#: FMain.form:36
+msgid "Download: 43.05 Mbit/s"
+msgstr "Download: 43.05 Mbit/s"
+
+#: FMain.form:43
+msgid "Pulse para iniciar"
+msgstr "Press to Star"
+

@@ -1,0 +1,82 @@
+' Gambas class file
+
+Private AnchoLargo As Integer = 500
+Private AnchoCorto As Integer = 208
+Private Comprobando As Boolean = False
+Private cambio As Boolean = False
+Public Sub Logo_MouseDown()
+  If Comprobando
+    Message.Title = ("Test en Ejecucion")
+    Message.Info(("Por favor espere hasta que se complete"))
+  Else
+    IniciarTest()
+  Endif
+End
+
+Public Sub Form_Open()
+  Acorta()
+  System.Shell = "/bin/bash"
+  Comprobando = False
+End
+
+Public Sub Pulse_MouseDown()
+  If Comprobando
+    Message.Title = ("Test en Ejecucion")
+    Message.Info(("Por favor espere hasta que se complete"))
+  Else
+    IniciarTest()
+  Endif
+End
+
+Public Function IniciarTest()
+  Dim SalidaCMD As String
+  Dim trozo As String[]
+  Acorta()
+  'Lanzo y almaceno el valor en SalidaCMD
+  Comprobando = True
+  Pulse.text = ("Espere...")
+  cambio = False
+  Me.Refresh
+  Wait 0.1
+  reloj.Delay = 1000
+  reloj.Start
+  ' Usamos la herramienta de consola 'speedtest' 
+  Shell "echo $(speedtest|grep 'load:'|awk -F ' ' '{print $2" "$5}')" To SalidaCMD
+  trozo = Split(SalidaCMD, " ")
+  'Al finalizar permito de nuevo y muestro valores
+  Comprobando = False
+  reloj.Stop
+  Alarga()
+  txtBAJADA.Text = ("Bajada: ") & trozo[0] & " Mbit/s"
+  txtSUBIDA.Text = ("Subida: ") & trozo[1] & "Mbit/s"
+  Pulse.text = ("Pulse para Iniciar")
+End
+
+Public Function Alarga()
+  Me.Resizable = True
+  Me.Width = AnchoLargo
+  Me.Height = 152
+  Me.Resizable = False
+  Me.text = ("Medidor de Velocidad de Navegación")
+End
+
+Public Function Acorta()
+  Me.Resizable = True
+  Me.Width = AnchoCorto
+  Me.Height = 152
+  Me.Resizable = False  
+  Me.Text = ("Velocidad RED")
+End
+
+Public Sub reloj_Timer()
+  Me.Refresh
+  Wait 0.1
+  If cambio
+      Pulse.Text = "Espere..."
+  Else
+      Pulse.Text = " ... "
+  Endif
+  cambio = Not cambio
+  Me.Refresh  
+  Wait 0.1
+End

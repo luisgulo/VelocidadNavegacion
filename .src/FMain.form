@@ -1,0 +1,41 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,63,19)
+  Text = ("-")
+  Icon = Picture["VelocidadNavegacion_128.png"]
+  Resizable = False
+  { Logo PictureBox
+    MoveScaled(1,0,16,16)
+    Picture = Picture["VelocidadNavegacion_128.png"]
+  }
+  { Descarga PictureBox
+    MoveScaled(18,2,6,6)
+    Picture = Picture["icon:/48/download"]
+  }
+  { Subida PictureBox
+    MoveScaled(18,10,6,6)
+    Picture = Picture["icon:/48/upload"]
+  }
+  { txtBAJADA TextLabel
+    MoveScaled(27,2,33,6)
+    Font = Font["Bold,11"]
+    Text = ("Download: 43.05 Mbit/s")
+    Alignment = Align.Normal
+  }
+  { Pulse Label
+    MoveScaled(1,14,16,4)
+    Font = Font["Bold"]
+    Text = ("Pulse para iniciar")
+    Alignment = Align.Center
+  }
+  { txtSUBIDA TextLabel
+    MoveScaled(27,10,33,6)
+    Font = Font["Bold,11"]
+    Text = ("Download: 43.05 Mbit/s")
+    Alignment = Align.Normal
+  }
+  { reloj #Timer
+    #MoveScaled(55,11)
+  }
+}
